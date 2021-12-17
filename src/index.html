@@ -22,6 +22,7 @@
     const result = document.getElementById("result")
 
     function handleClick(isbn) {
+      result.style.display = "block"
       if (checkISBN(caluclateISBNChecksum(isbn))) {
         result.innerHTML = "valid"
         result.style.color = "green"
@@ -32,6 +33,8 @@
     }
 
     button.addEventListener("click", () => handleClick(input1.value))
+
+    input1.addEventListener("focus", () => result.style.display = "none")
   </script>
 </body>
 
