@@ -11,12 +11,27 @@
 
 <body>
   <div>
+    <input id="input1" type="text" placeholder="ISBN eingeben..." maxlength="10">
     <button id="button">Check</button>
+    <p id="result"></p>
   </div>
 
   <script>
     const button = document.getElementById("button")
-    button.addEventListener("click", () => checkISBN())
+    const input1 = document.getElementById("input1")
+    const result = document.getElementById("result")
+
+    function main(isbn) {
+      if (checkISBN(isbn)) {
+        result.innerHTML = "valid"
+        result.style.color = "green"
+      } else {
+        result.innerHTML = "ISBN is invalid"
+        result.style.color = "red"
+      }
+    }
+
+    button.addEventListener("click", () => main(input1.value))
   </script>
 </body>
 
