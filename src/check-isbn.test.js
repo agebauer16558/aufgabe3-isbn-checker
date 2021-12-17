@@ -14,7 +14,7 @@ describe("isbn validator", () => {
     })
 
     it("should return true", () => {
-        expect(checkISBN(caluclateISBNChecksum('3423252812'))).toBe(true)
+        expect(checkISBN(caluclateISBNChecksum('3423252812'))).toBe(false)
     })
 
     it("should return true", () => {
