@@ -21,8 +21,8 @@
     const input1 = document.getElementById("input1")
     const result = document.getElementById("result")
 
-    function main(isbn) {
-      if (checkISBN(isbn)) {
+    function handleClick(isbn) {
+      if (checkISBN(caluclateISBNChecksum(isbn))) {
         result.innerHTML = "valid"
         result.style.color = "green"
       } else {
@@ -31,7 +31,7 @@
       }
     }
 
-    button.addEventListener("click", () => main(input1.value))
+    button.addEventListener("click", () => handleClick(input1.value))
   </script>
 </body>
 
