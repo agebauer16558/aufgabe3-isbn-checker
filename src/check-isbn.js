@@ -1,12 +1,12 @@
-const caluclateISBNChecksum = (isbn) => {
+function caluclateISBNChecksum(isbn) {
   // Throw error if length is 0
-  if(isbn.length === 0) {
+  if (isbn.length === 0) {
     return new Error("You didn't enter any value!");
   }
 
   // First nine digits can have any value between 0 and 9
   let sum = 0;
-  for (let i = 0; i < isbn.length -1 ; i++) {
+  for (let i = 0; i < isbn.length - 1; i++) {
     let value = isbn[i] - "0";
     sum += value * (10 - i);
   }
@@ -15,13 +15,12 @@ const caluclateISBNChecksum = (isbn) => {
   let lastValue = isbn[9];
   if (lastValue == "X") {
     sum += 10;
-  } 
+  }
 
-  return sum; 
+  return sum;
 }
 
-
-const checkISBN = (checksum) => {
+function checkISBN(checksum) {
   if (checksum % 11 == 0) {
     return true;
   } else {
@@ -29,8 +28,4 @@ const checkISBN = (checksum) => {
   }
 }
 
-
-
-console.log(checkISBN(caluclateISBNChecksum("007462542X")));
-
-module.exports = { caluclateISBNChecksum, checkISBN};
+module.exports = { checkISBN, caluclateISBNChecksum };
